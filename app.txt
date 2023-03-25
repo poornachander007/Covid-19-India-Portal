@@ -1,0 +1,41 @@
+
+
+CREATE TABLE state (
+
+  state_id INT NOT NULL PRIMARY KEY,
+  state_name TEXT,
+  population INT
+
+          );
+
+CREATE TABLE district (
+
+  district_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  district_name TEXT,
+  state_id INT,
+  cases INT,
+  cured INT,
+  active INT,
+  deaths INT,
+  FOREIGN KEY(state_id) REFERENCES state(state_id) ON DELETE CASCADE
+           
+            );
+
+CREATE TABLE user(
+
+      username TEXT,
+      name TEXT,
+      password TEXT,
+      gender TEXT,
+      location TEXT
+
+    );
+
+
+
+
+
+
+
+
+
